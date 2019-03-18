@@ -171,6 +171,6 @@ Or download the *best* m4a or audio format
 - [youtube-dl options](https://github.com/ytdl-org/youtube-dl/blob/master/README.md#options)
 
 ## And Then...
-This is just a short guide for helping our design students do things faster with less interface! Am I missing any crucial tools or tips? Let me know as an issue or make a pull request.
+This is just a short guide for helping our design students do things faster with less interface! Am I missing any crucial tools or tips? Let me know as an issue or make a pull request on [GitHub](https://github.com/ffd8/cli-for-artists-and-designers).
 
 cc [teddavis.org](https://teddavis.org) 2019  
