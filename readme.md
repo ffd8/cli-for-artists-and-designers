@@ -34,7 +34,8 @@ Use caution if following guides with the following commands
 
 
 ## Homebrew
-[Homebrew](https://brew.sh) is a package manager, keeping an [updated list](https://formulae.brew.sh/) of tools and making their installation super easy.
+[Homebrew](https://brew.sh) is a package manager.  
+They keep an [updated list](https://formulae.brew.sh/) of tools and make their installation super easy.
 
 ### Install  
 copy + paste into the following into Terminal: 
@@ -47,8 +48,8 @@ After it's installed, to install any package, you just enter:
 > brew install *packagename*
 
 ## Imagemagick
-[Imagemagick](https://www.imagemagick.org) is for processing images.   
-Amazing for batch processes to a directory of images.
+[Imagemagick](https://www.imagemagick.org) is for images.   
+Amazing at batch processing to a directory of images.
 ### Install
 > brew install imagemagik
 
@@ -88,8 +89,8 @@ Batch process using `mogrify`, »
 - [Mogrify Guide](https://imagemagick.org/script/mogrify.php)
 
 ## FFmpeg
-[FFmpeg](https://www.ffmpeg.org) is for processing movies.  
-It's the underlying tech beneath most online/offline converters.
+[FFmpeg](https://www.ffmpeg.org) is for movies.  
+It's the underlying tech beneath most online/offline media converters.
 
 ### Install
 > brew install ffmpeg
@@ -140,7 +141,8 @@ Useful to speed up long screen-recordings.
 - [20 FFmpeg commands for beginners](https://www.ostechnix.com/20-ffmpeg-commands-beginners/)
 
 ## youtube-dl
-[youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html) is the ultimate tool for extracting and preserving media files from *[any](https://ytdl-org.github.io/youtube-dl/supportedsites.html)* website.  
+[youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html) is an online media extractor.  
+The ultimate tool for downloading and preserving media files from *[any](https://ytdl-org.github.io/youtube-dl/supportedsites.html)* website.  
 
 ### Install
 > brew install youtube-dl
@@ -169,7 +171,6 @@ Or download the *best* m4a or audio format
 - [youtube-dl options](https://github.com/ytdl-org/youtube-dl/blob/master/README.md#options)
 
 ## And Then...
-This is just a short guide for helping our design students do things faster with less interface!  
-Am I missing any crucial tools or tips? Let me know as an issue or make a pull request.
+This is just a short guide for helping our design students do things faster with less interface! Am I missing any crucial tools or tips? Let me know as an issue or make a pull request.
 
-Version - 20190318
+cc [teddavis.org](https://teddavis.org) 2019  

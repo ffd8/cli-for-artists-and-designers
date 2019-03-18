@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'roboto_mono';
+  src: url('../fonts/robotomono-regular-webfont.woff2') format('woff2'),
+  url('../fonts/robotomono-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'roboto_mono';
+  src: url('../fonts/robotomono-light-webfont.woff2') format('woff2'),
+  url('../fonts/robotomono-light-webfont.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+body {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 25px;
+  color: #333333;
+  font-family: "roboto_mono", sans-serif;
+  font-size: 12pt;
+  line-height: 1.6;
+  font-weight:200;
+}
+
+h1 {
+  line-height: 1;
+  font-weight:400;
+  border-bottom: solid 2px #000;
+  border-top: solid 2px #000;
+  padding:10px 0 10px 0;
+}
+
+h2 {
+  border-bottom: solid 2px #000;
+  margin-top:50px;
+}
+
+h3 {
+}
+
+code {
+  border-radius: 5px;
+  background-color: #eee;
+  display: inline-block;
+  padding: 0 8px;
+  font-family: Consolas, Courier, monospace;
+}
+
+blockquote p{
+  background:#fafafa;
+  border-left:3px solid #aaa;
+  padding:5px;
+  font-weight:400;
+}
