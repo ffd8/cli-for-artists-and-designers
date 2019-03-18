@@ -19,9 +19,16 @@ body {
   padding: 25px;
   color: #333333;
   font-family: "roboto_mono", sans-serif;
-  font-size: 12pt;
-  line-height: 1.6;
+  font-size: 11pt;
+  line-height: 1.5em;
   font-weight:200;
+}
+
+a{
+  color:#000;
+}
+a:visited{
+  color:#666;
 }
 
 h1 {

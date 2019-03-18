@@ -101,7 +101,7 @@ pass `-i` input file, options, output file.
 > ffmpeg -i myfile.mov myfile.mp4
 
 ### Convert format
-It's really as easy as above! You don't even *need* to set active directly, you can also just type `ffmpeg -i ` then drag + drop original file, drag + drop again, replace suffix with new filetype.
+It's really as easy as above! You don't even *need* to set an active directly, you can also just type `ffmpeg -i ` then drag + drop original file, drag + drop again, replace suffix with new filetype.
 > ffmpeg -i *input_file* *output_file.filetype*
 
 ### Trim
