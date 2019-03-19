@@ -14,17 +14,54 @@ This guide is written for MacOS, where the built-in CLI tool is known as Termina
 
 ## CLI Basics
 There's just a few commands/tips you really need to know at first.  
+
+**_note:_** _directory means folder_
+
 - `cd` (change directory), used to set working dir for accessing files.  
+
 - `../` (parent folder), used w/ `cd` to navigate one directory up.   
+
 - `ls` (list), lists all files within working dir.  
+
 - `UP ARROW` (history), toggle through previous commands.  
+
+- `TAB` autocomplete commands / directory names
+
 - `say hello world` (text-to-speech), never gets old...  
+
 - `man` (manual), used before name of tool, to learn about its options.
+
+- `pwd` prints the name of the working directory
+
+- `touch` followed by a filename + extension creates an empty file of that kind 
+
+  ```bash
+  touch index.html # creates an empty file called index.html
+  ```
+
+* `mkdir` followed by a name, creates an empty directory
+
+  ```bash
+  mkdir new_directory # creates empty folder
+  cd new_directory # change to my_folder 
+  touch index.html # creates an empty file called index.html
+  touch style.css # creates an empty file called style.css
+  mkdir js # creates an empty directory called js
+  touch js/script.js # creates an empty script.js file inside the js directory
+  
+  new_directory
+  ├── js
+  │   └── script.js
+  ├── index.html
+  └── style.css
+  ```
+
+  
 
 ### Set active directory
 You always set the folder you're working in, either for processing files in that folder or having items download to that directory.
 > cd *path/to/directory*
- 
+
 The easiest way to do this is just type `cd` + `spacebar`, then drag and drop the folder into the Terminal window. Hit `Enter` and you're now working in that folder. You can test by listing the contents with `ls`.
 
 ### Careful
@@ -63,7 +100,7 @@ Navigate to folder of images, as described above in *Set active directory*.
 Grab all \*.png or \*.jpg and output GIF
 > convert *.png -loop 0 test.gif
 
- 
+
 * `convert` launches Imagemagick  
 * `*.png` grabs for all pngs  
 * `-loop 0` sets infinite looping  
@@ -77,7 +114,7 @@ Create folder for output using `mkdir` (make directory)
 
 Batch process using `mogrify`, » 
 > mogrify -resize 128x128 -quality 100 -path ./thumbs *.jpg  
- 
+
 * `mogrify` launch batch tool of Imagemagick,   
 * `-resize #x#` resizes (can also use percentages)  
 * `-quality 100` sets compression  
