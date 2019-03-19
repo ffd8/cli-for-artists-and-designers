@@ -56,7 +56,7 @@ There's just a few commands/tips you really need to know at first.
   └── style.css
   ```
 
-  
+* `python -m SimpleHTTPServer 8000` creates a server on port 8000 `localhost:8000` it is possible to set any available port number
 
 ### Set active directory
 You always set the folder you're working in, either for processing files in that folder or having items download to that directory.
