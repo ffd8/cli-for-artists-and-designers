@@ -53,7 +53,7 @@ The easiest way to do this is just type `cd` + `spacebar`, then drag and drop th
 
 ### Careful
 Use caution if following guides with the following commands  
-- `rm` + `rmdir` (remove + remove directory), permanently removes files!  
+- `rm`/`rmdir` (remove / remove directory), permanently removes files!  
 - `sudo` (root), sometimes needed for system changes, but gives admin privledges.
 
 
@@ -82,7 +82,7 @@ To add packages:
 just replace install instructions of `brew install ...` with `pacman -Sy ...`
 
 ## Imagemagick
-[Imagemagick](https://www.imagemagick.org) is for images.   
+[Imagemagick](https://www.imagemagick.org) deals with images.   
 Amazing at batch processing to a directory of images.
 ### Install
 > brew install imagemagik
@@ -121,7 +121,7 @@ Batch process using `mogrify`:
 - [Mogrify Guide](https://imagemagick.org/script/mogrify.php)
 
 ## FFmpeg
-[FFmpeg](https://www.ffmpeg.org) is for movies.  
+[FFmpeg](https://www.ffmpeg.org) deals with audio/video.  
 It's the underlying tech beneath most online/offline media converters.
 
 ### Install
