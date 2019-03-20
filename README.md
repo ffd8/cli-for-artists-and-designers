@@ -114,7 +114,7 @@ Batch process using `mogrify`:
 * `-resize #x#` resizes (can also use percentages)  
 * `-quality 100` sets compression  
 * `-path ./thumbs` specifies where to put outputs  
-* `*.jpg` specifies fileformat of output. 
+* `*.jpg` specifies fileformat of input. 
 
 ### Additional Links
 - [Imagemagick CLI](https://imagemagick.org/script/command-line-processing.php)
