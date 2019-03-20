@@ -15,11 +15,11 @@
     document.getElementsByTagName('body')[0].innerHTML = content;
 
     // fix anchors
-    var h2s = document.getElementsByTagName("h2");
-    for(var i=0; i<h2s.length;i++){
-      var anchorName = h2s[i].innerHTML.toLowerCase().replace(" ", "-");
-      h2s[i].setAttribute('id', anchorName);
-      h2s[i].setAttribute('name', anchorName);
+    var hs = document.querySelectorAll("h1, h2, h3, h4");
+    for(var i=0; i<hs.length;i++){
+      var anchorName = hs[i].innerHTML.toLowerCase().split(" ").join("-");
+      hs[i].setAttribute('id', anchorName);
+      hs[i].setAttribute('name', anchorName);
     }
 
     // fix links
