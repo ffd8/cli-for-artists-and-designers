@@ -177,13 +177,16 @@ Useful shortcuts:
 - `up/down` (seek backward/forward 1 minute)
 
 Loop endless at fullscreen:
-> ffplay -fs -loop 0 -i *input.mp4*
+> ffplay -fs -loop 0 *input.mp4*
 
 View audio waveform:
-> ffplay -fs -showmode 1 *input.mp4*
+> ffplay -showmode 1 *input.mp4*
 
 View audio frequency (FFT) spectrogram:
-> ffplay -fs -showmode 2 *input.mp4*
+> ffplay -showmode 2 *input.mp4*
+
+View debug [Motion Vectors](https://trac.ffmpeg.org/wiki/Debug/MacroblocksAndMotionVectors):
+> ffplay -flags2 +export_mvs -vf codecview=mv=pf+bf+bb input.mp4 
 
 ### Additional Links
 - [FFmpeg CLI guide](https://www.ffmpeg.org/ffmpeg.html)
