@@ -166,7 +166,7 @@ Useful to speed up long screen-recordings:
 ### Playback
 FFmpeg ships with a minimal audio/video player `ffplay`.  
 Basic usage:
-> ffplay -i *input.mp4*
+> ffplay *input.mp4*
 
 Useful shortcuts:  
 - `q`/`ESC` (quit)  
