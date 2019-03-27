@@ -98,7 +98,7 @@ Grab all \*.png or \*.jpg and output GIF:
 
  
 * `convert` launches Imagemagick  
-* `*.png` grabs for all pngs  
+* `*.png` searches for PNGs  
 * `-loop 0` sets infinite looping  
 * `test.gif` name of output file (customize).
 
@@ -114,7 +114,7 @@ Batch process using `mogrify`:
 * `-resize #x#` resizes (can also use percentages)  
 * `-quality 100` sets compression  
 * `-path ./thumbs` specifies where to put outputs  
-* `*.jpg` specifies fileformat of input. 
+* `*.jpg` searches for JPGs 
 
 ### Additional Links
 - [Imagemagick CLI](https://imagemagick.org/script/command-line-processing.php)
@@ -157,6 +157,14 @@ Set input file, frames per second for output, file path/type:
 
 * `-vf fps=1` exports # frames per second
 
+### Video from directory
+Navigate to directory of images, as described above in *[Set active directory](#set-active-directory)*.  
+> ffmpeg -framerate 30 -pattern_type glob -i '*.png' \
+  -c:v libx264 -pix_fmt yuv420p out.mp4
+
+* `-framerate 30` sets number of frames per second
+* `*.png` searches for PNGs
+
 ### Speed
 Useful to speed up long screen-recordings:
 > ffmpeg -i input.mp4 -filter:v "setpts=0.5*PTS" output.mp4
@@ -192,6 +200,7 @@ View debug [Motion Vectors](https://trac.ffmpeg.org/wiki/Debug/MacroblocksAndMot
 - [FFmpeg CLI guide](https://www.ffmpeg.org/ffmpeg.html)
 - [Werner Robitza FFmpeg guide](http://slhck.info/ffmpeg-encoding-course/#/20)
 - [20 FFmpeg commands for beginners](https://www.ostechnix.com/20-ffmpeg-commands-beginners/)
+- [More tips for converting images to video](http://hamelot.io/visualization/using-ffmpeg-to-convert-a-set-of-images-into-a-video/)
 
 ## youtube-dl
 [youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html) is an online media extractor.  
