@@ -21,7 +21,7 @@ Usually a few arguments are needed following the command.
 ### CLI Program
 We enter these commands into the... Command-Line **Interface**.  
 
-- MacOS, the built-in CLI is Terminal, sitting in your Utilities directory.  
+- MacOS, the built-in CLI is Terminal, in your Utilities directory ([iTerm](https://www.iterm2.com) is also nice).  
 - Windows, the built-in CLI is CMD, but you may want [msys2](https://www.msys2.org) + [conemu](https://conemu.github.io).  
 - Linux, *yeah yeah...*
 
@@ -46,15 +46,20 @@ We enter these commands into the... Command-Line **Interface**.
 
 
 ### Set active directory
-You usually set the directory you're working in, for easily typing filenames to process or saving items to that specific location.
+You usually set the directory you're working in, for easily typing filename's relative path for processing or saving items to that specific location.
 > cd *path/to/directory*
  
-The easiest way to do this is just type `cd` + `spacebar`, then drag and drop the folder into the Terminal window. Hit `Enter` and you're now working in that directory. You can test by listing the contents with `ls`.
+The easiest way to do this is just type `cd` + `spacebar`, then drag and drop the folder into the Terminal window. Hit `Enter` and you're now working in that directory. Test you're there by listing the contents with `ls`.
 
 ### Careful
 Use caution if following guides with the following commands  
 - `rm`/`rmdir` (remove / remove directory), permanently removes files!  
 - `sudo` (root), sometimes needed for system changes, but gives admin privledges.
+
+### Additional Links
+- [CLI Primer](http://netart.rocks/notes/commandline)
+- [ZSH Guide](https://medium.freecodecamp.org/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38)
+- [A-Z Index MacOS Command Line](https://ss64.com/osx/)
 
 
 ## Package Manager
@@ -85,7 +90,7 @@ just replace install instructions of `brew install ...` with `pacman -Sy ...`
 [Imagemagick](https://www.imagemagick.org) deals with images.   
 Amazing at batch processing to a directory of images.
 ### Install
-> brew install imagemagik
+> brew install imagemagick
 
 ### Usage
 Once installed, you call it with `convert`,  
@@ -135,6 +140,10 @@ pass `-i` input file, options, output file:
 ### Convert
 It's really as easy as above! You don't even *need* to set an active directory, you can simply type `ffmpeg -i ` then drag + drop original file, drag + drop again, replacing the suffix with a new filetype:
 > ffmpeg -i *input.filetype* *output.filetype*
+
+### Movie to GIF
+Similar to above, but with an added parameter:
+> ffmpeg -i input.mp4 -pix_fmt rgb24 output.gif
 
 ### Trim
 Extract segment from movie 
