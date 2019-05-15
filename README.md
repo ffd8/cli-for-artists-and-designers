@@ -113,13 +113,14 @@ Create a directory for your output using `mkdir`:
 > mkdir thumbs
 
 Batch process using `mogrify`: 
-> mogrify -resize 128x128 -quality 100 -path ./thumbs *.jpg  
+> mogrify -resize 128x128 -quality 100 -format jpg -path ./thumbs *.jpg  
  
 * `mogrify` launch batch tool of Imagemagick,   
 * `-resize #x#` resizes (can also use percentages)  
-* `-quality 100` sets compression  
+* `-quality 100` sets compression 
+* `-format jpg` optional suffix to convert formats 
 * `-path ./thumbs` specifies where to put outputs  
-* `*.jpg` searches for JPGs 
+* `*.jpg` searches for JPGs in active dir 
 
 ### Additional Links
 - [Imagemagick CLI](https://imagemagick.org/script/command-line-processing.php)
