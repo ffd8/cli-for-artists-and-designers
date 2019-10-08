@@ -211,6 +211,7 @@ View debug [Motion Vectors](https://trac.ffmpeg.org/wiki/Debug/MacroblocksAndMot
 - [Werner Robitza FFmpeg guide](http://slhck.info/ffmpeg-encoding-course/#/20)
 - [20 FFmpeg commands for beginners](https://www.ostechnix.com/20-ffmpeg-commands-beginners/)
 - [More tips for converting images to video](http://hamelot.io/visualization/using-ffmpeg-to-convert-a-set-of-images-into-a-video/)
+- [Ludwig Zeller FFmpeg Cheatsheet](https://gitlab.fhnw.ch/hgk-ml/hgk-ml-tools/tree/master/ffmpeg_cheatsheet)
 
 ## youtube-dl
 [youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html) is an online media extractor.  
