@@ -1,11 +1,16 @@
-(function () {
-  var file = file || "README.md";
+  (function () {
+  var file = file || "README.md?"+Math.floor(Math.random()*9999);
   var reader = new stmd.DocParser();
   var writer = new stmd.HtmlRenderer();
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function () {
     if(xhr.readyState === 4 && xhr.status === 200) {
       display(xhr);
+      if(location.hash.length > 1){
+        const yourElement = document.getElementById(location.hash.substring(1 ));
+        const y = yourElement.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+      }
     }
   };
 
@@ -30,9 +35,9 @@
       }
     }
 
-    
+
     /* try to extract h1 title and use as title for page
-       if no h1, use name of file 
+       if no h1, use name of file
     */
     try {
       document.title = document.querySelector('h1').textContent
