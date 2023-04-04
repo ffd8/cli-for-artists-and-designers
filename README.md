@@ -77,8 +77,11 @@ To install, just copy + paste into the following into Terminal:
 It will confirm you want to install XCode dev tools (a few Gb), press `ENTER` to continue, then enter your computer's password (only time it should be needed).  
 *FYI: you won't see your password while typing, just press `ENTER` when done.*
 
-Once done ($ or % reappear), then to install packages:  
-> brew install *packagename*
+Since 10.12+, once the install is complete, you need to copy the 2 suggested lines, paste and press ENTER. Starts with `(echo...`
+
+Once done ($ or % reappear), then to install packages  
+(this is generic code.. scroll down for actual packages):  
+> brew install *package_name*
 
 ### Windows
 There is a manager called '[pacman](https://www.archlinux.org/pacman/)' that comes with above CLI ([msys2](https://www.msys2.org) + [conemu](https://conemu.github.io)), but it hasn't been tested and may not be necessary. Instead, you should use imagemagick's binary installer (which includes FFMPEG as an option!)
@@ -96,7 +99,7 @@ Convert image into ANY format, quickly assemble gifs, and especially batch proce
 
 ### Usage
 Once installed, you call it with `convert` (Windows use `magick`),  
-then pass any number of input and output arguments.
+then pass any number of input and output arguments. `mogrify` is for batch processing.
 
 ### Convert
 You don't *need* to set an active directory, you can simply type `convert ` (spacebar) then drag + drop original file, drag + drop again, replacing the suffix with a new filetype:
@@ -105,7 +108,9 @@ You don't *need* to set an active directory, you can simply type `convert ` (spa
 
 * `convert` launches Imagemagick  
 * `INPUT_FILE.png`, drag + drop desired image to change
-* `OUTPUT_FILE`, drag + drop again, adjusting extension to desired format
+* `OUTPUT_FILE`, drag + drop again, adjusting extension to desired format  
+
+But, you'll find the command super long with the absolute filepath, which then might be frustrating to edit options within, it's ideal to `cd *path*` into working directory withfiles and access by relative filename path only.
 
 ### GIF from directory
 Navigate to a directory of images, as described above in *[Set active directory](#set-active-directory)*.  
@@ -157,6 +162,13 @@ pass `-i INPUTFILE.xxx`, options, output file:
 It's really as easy as above! You don't even *need* to set an active directory, you can simply type `ffmpeg -i ` then drag + drop original file, drag + drop again, replacing the suffix with a new filetype:
 > ffmpeg -i *input.xxx* *output.yyy*
 
+Get the loooong list of formats + codecs:
+> ffmpeg -formats  
+> ffmpeg -codecs
+
+Then apply them while converting:
+> ffmpeg -i myfile.mp4 -vcodec libx265 myfile_265.mp4
+
 ### Movie to GIF
 Similar to above, but with an added parameter:
 > ffmpeg -i input.mp4 -pix_fmt rgb24 output.gif
@@ -173,7 +185,7 @@ Extract segment from movie without re-encoding
 * `output.mp4` name/path for new output file
 
 ### Extract frames
-Navigate to directory video, as described above in *[Set active directory](#set-active-directory)*.  
+Navigate to directory of video, as described above in *[Set active directory](#set-active-directory)*.  
 Create directory for output using `mkdir`: 
 > mkdir frames
 
@@ -182,6 +194,16 @@ Set input file, frames per second for output, file path/type:
 
 * `-vf fps=1` exports # frames per second
 * `%04d` use 4 padded digits (0000, 0001, ...)
+
+### Extract Audio
+Navigate to directory of video, as described above in *[Set active directory](#set-active-directory)*.  
+Extract audio and convert to mp3 (or other format):  
+>ffmpeg -i in.mp4 -vn -ac 2 out.mp3
+
+### Merge Audio + Video
+Navigate to directory of video, as described above in *[Set active directory](#set-active-directory)*.  
+We can merge an audio + video, using the shortest one as the file length:
+> ffmpeg -i input.mov -i input.mp3 -c:v copy -map 0:v:0 -map 1:a:0 -shortest output.mov
 
 ### Video from directory
 Navigate to directory of images, as described above in *[Set active directory](#set-active-directory)*.  
@@ -222,7 +244,7 @@ View audio frequency (FFT) spectrogram:
 View debug [Motion Vectors](https://trac.ffmpeg.org/wiki/Debug/MacroblocksAndMotionVectors):
 > ffplay -flags2 +export_mvs -vf codecview=mv=pf+bf+bb input.mp4 
 
-Export Motion Vectors:
+Export Motion Vectors only:
 > ffmpeg -flags2 +export_mvs -i **input.mp4** -vf "split[src],codecview=mv=pf+bf+bb[vex],[vex][src]blend=all_mode=difference128,eq=contrast=7:brightness=-1:gamma=1.5" -c:v libx264 **output.mp4**
 
 
@@ -231,49 +253,51 @@ Export Motion Vectors:
 - [Complete list of ffmpeg flags / commands](https://gist.github.com/tayvano/6e2d456a9897f55025e25035478a3a50)
 - [Werner Robitza FFmpeg guide](http://slhck.info/ffmpeg-encoding-course/#/20)
 - [20 FFmpeg commands for beginners](https://www.ostechnix.com/20-ffmpeg-commands-beginners/)
+- [Fancy (ffplay) Filtering Examples](https://trac.ffmpeg.org/wiki/FancyFilteringExamples)
 - [More tips for converting images to video](http://hamelot.io/visualization/using-ffmpeg-to-convert-a-set-of-images-into-a-video/)
 - [Ludwig Zeller FFmpeg Cheatsheet](https://gitlab.fhnw.ch/hgk-ml/hgk-ml-tools/tree/master/ffmpeg_cheatsheet)
 
 ## youtube-dl
 [youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html) is an online media extractor.  
 The ultimate tool for downloading and archiving media files from *[almost any](https://ytdl-org.github.io/youtube-dl/supportedsites.html)* website.  
+Lately, there's been more activity and updates on a fork, [youtube-dlp](https://github.com/yt-dlp/yt-dlp), so we'll use that.
 
 ### Install
-> brew install youtube-dl
+> brew install yt-dlp
 
 *(Windows, see [Package Manager](#package-manager) for tip on installing)*
 
 ### Usage
 `cd` the desired directory for saving to, then as simple as:
-> youtube-dl *VIDEO_URL*
+> yt-dlp *VIDEO_URL*
 
 ### Formats
-Most hosted videos have multiple files to stream depending on connection speed.
+Most hosted videos have multiple files to stream depending on connection speed / quality.
 
 List formats:
-> youtube-dl *VIDEO_URL* -F
+> yt-dlp *VIDEO_URL* -F
 
 It will return a long list of available formats, starting with an ID.  
 Then download the one you prefer:
-> youtube-dl *VIDEO_URL* -f ##
+> yt-dlp *VIDEO_URL* -f ##
 
 Or download the *best* mp4 or similar format:
-> youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' *VIDEO_URL*
+> yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' *VIDEO_URL*
 
 Or download the *best* m4a or audio format:
-> youtube-dl -f 'bestaudio[ext=m4a]' *VIDEO_URL*
+> yt-dlp -f 'bestaudio[ext=m4a]' *VIDEO_URL*
 
 ### Additional Links
-- [youtube-dl options](https://github.com/ytdl-org/youtube-dl/blob/master/README.md#options)
-- [youtube-dlp](https://github.com/yt-dlp/yt-dlp), a fork of youtube-dl with additional options
+- [yt-dlp options](https://github.com/yt-dlp/yt-dlp#usage-and-options), laundry list of features to use
+- [youtube-dlg](https://github.com/oleksis/youtube-dl-gui), a GUI approach for yt-dl(p)
 
 ## And Then...
-Read the `man` (manual) pages to become an expert.  
+Read the `man` (manual) pages to become an expert, ie `man say`.  
 Learn by doing web-search for `command` + task you'd like to perform.  
 Enjoy more productivity with less interface!   
 
 Missing crucial tools or tips? Make an [issue on GitHub](https://github.com/ffd8/cli-for-artists-and-designers/issues).
 
-Updated 2022.06.13  
+Updated 2023.04.04  
 cc [teddavis.org](https://teddavis.org) 2019 –    
 additional contributions: [Ya-No](https://github.com/s4ac), [Hansi3D](https://github.com/kritzikratzi)
