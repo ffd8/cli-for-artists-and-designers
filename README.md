@@ -250,6 +250,7 @@ Export Motion Vectors only:
 
 ### Additional Links
 - [FFmpeg CLI guide](https://www.ffmpeg.org/ffmpeg.html)
+- [Rick Companje - FFMpeg Tips](https://companje.nl/ffmpeg)
 - [Complete list of ffmpeg flags / commands](https://gist.github.com/tayvano/6e2d456a9897f55025e25035478a3a50)
 - [Werner Robitza FFmpeg guide](http://slhck.info/ffmpeg-encoding-course/#/20)
 - [20 FFmpeg commands for beginners](https://www.ostechnix.com/20-ffmpeg-commands-beginners/)
