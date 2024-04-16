@@ -7,7 +7,7 @@
 - [Package Manager](#package-manager) - Installing tools
 - [Imagemagick](#imagemagick) - Images
 - [FFmpeg](#ffmpeg) - Movies
-- [youtube-dl](#youtube-dl) - Download media
+- [youtube-dlp](#youtube-dlp) - Download Videos
 
 ## Basics
 ### Workflow
@@ -60,7 +60,7 @@ The easiest way to do this is just type `cd` + `spacebar`, then drag and drop th
 - `sudo` (root), sometimes needed for system changes, but gives admin privledges.
 
 ### Additional Links
-- [CLI Primer](http://netart.rocks/notes/commandline)
+- [CLI Primer](https://netizen.org/workshops/the-command-line/)
 - [Jazz up your ZSH Guide](https://medium.freecodecamp.org/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38)
 - [A-Z Index MacOS Command Line](https://ss64.com/osx/)
 
@@ -84,10 +84,10 @@ Once done ($ or % reappear), then to install packages
 > brew install *package_name*
 
 ### Windows
-There is a manager called '[pacman](https://www.archlinux.org/pacman/)' that comes with above CLI ([msys2](https://www.msys2.org) + [conemu](https://conemu.github.io)), but it hasn't been tested and may not be necessary. Instead, you should use imagemagick's binary installer (which includes FFMPEG as an option!)
+There is a manager called '[pacman](https://www.archlinux.org/pacman/)' that comes with above CLI ([msys2](https://www.msys2.org) + [conemu](https://conemu.github.io)), but it hasn't been tested and may not be necessary. Instead, you should use imagemagick's binary installer (which includes FFMPEG as an option!?)
 
-[Imagemagick - Windows Binary Release](https://imagemagick.org/script/download.php#windows)  
-[youtube-dl - Windows Binary install](https://github.com/ytdl-org/youtube-dl/blob/master/README.md#installation)
+[Imagemagick - Windows Binary](https://imagemagick.org/script/download.php#windows)  
+[youtube-dlp - Windows Binary](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#release-files)
 
 ## Imagemagick
 [Imagemagick](https://www.imagemagick.org) deals with images.   
@@ -258,15 +258,14 @@ Export Motion Vectors only:
 - [More tips for converting images to video](http://hamelot.io/visualization/using-ffmpeg-to-convert-a-set-of-images-into-a-video/)
 - [Ludwig Zeller FFmpeg Cheatsheet](https://gitlab.fhnw.ch/hgk-ml/hgk-ml-tools/tree/master/ffmpeg_cheatsheet)
 
-## youtube-dl
-[youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html) is an online media extractor.  
-The ultimate tool for downloading and archiving media files from *[almost any](https://ytdl-org.github.io/youtube-dl/supportedsites.html)* website.  
-Lately, there's been more activity and updates on a fork, [youtube-dlp](https://github.com/yt-dlp/yt-dlp), so we'll use that.
+## youtube-dlp
+[youtube-dlp](https://github.com/yt-dlp/yt-dlp) is a great fork from the original [youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html) project, which is an online media extractor.  
+The ultimate tool for downloading and archiving media files from *[almost any](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md)* website.  
 
 ### Install
 > brew install yt-dlp
 
-*(Windows, see [Package Manager](#package-manager) for tip on installing)*
+*(Windows, see [Package Manager](#package-manager) for tip on installing, or [download binary](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#release-files))*
 
 ### Usage
 `cd` the desired directory for saving to, then as simple as:
@@ -288,17 +287,19 @@ Or download the *best* mp4 or similar format:
 Or download the *best* m4a or audio format:
 > yt-dlp -f 'bestaudio[ext=m4a]' *VIDEO_URL*
 
+Then use `ffmpeg` above to convert to desired format.
+
 ### Additional Links
 - [yt-dlp options](https://github.com/yt-dlp/yt-dlp#usage-and-options), laundry list of features to use
 - [youtube-dlg](https://github.com/oleksis/youtube-dl-gui), a GUI approach for yt-dl(p)
 
 ## And Then...
 Read the `man` (manual) pages to become an expert, ie `man say`.  
-Learn by doing web-search for `command` + task you'd like to perform.  
+Learn more by doing web-search (usually Stack-Overflow discussion) for `command` + task you'd like to perform.  
 Enjoy more productivity with less interface!   
 
 Missing crucial tools or tips? Make an [issue on GitHub](https://github.com/ffd8/cli-for-artists-and-designers/issues).
 
-Updated 2023.04.04  
+Updated 2024.04.16  
 cc [teddavis.org](https://teddavis.org) 2019 –    
 additional contributions: [Ya-No](https://github.com/s4ac), [Hansi3D](https://github.com/kritzikratzi)
