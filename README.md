@@ -87,6 +87,7 @@ Once done ($ or % reappear), then to install packages
 There is a manager called '[pacman](https://www.archlinux.org/pacman/)' that comes with above CLI ([msys2](https://www.msys2.org) + [conemu](https://conemu.github.io)), but it hasn't been tested and may not be necessary. Instead, you should use imagemagick's binary installer (which includes FFMPEG as an option!?)
 
 [Imagemagick - Windows Binary](https://imagemagick.org/script/download.php#windows)  
+[FFMPEG manual install](https://phoenixnap.com/kb/ffmpeg-windows)  
 [youtube-dlp - Windows Binary](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#release-files)
 
 ## Imagemagick
