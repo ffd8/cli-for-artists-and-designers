@@ -143,6 +143,7 @@ Batch process using `mogrify`:
 - [Imagemagick CLI](https://imagemagick.org/script/command-line-processing.php)
 - [Imagemagick Formats](https://imagemagick.org/script/formats.php)
 - [Mogrify Batch Guide](https://imagemagick.org/script/mogrify.php)
+- [Fred's ImageMagick Scripts](http://www.fmwconcepts.com/imagemagick/index.php)
 - [gifsicle](https://www.lcdf.org/gifsicle/) - for everything GIF!
 
 ## FFmpeg
