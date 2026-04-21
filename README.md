@@ -87,7 +87,16 @@ Once done ($ or % reappear), then to install packages
 There is a manager called '[pacman](https://www.archlinux.org/pacman/)' that comes with above CLI ([msys2](https://www.msys2.org) + [conemu](https://conemu.github.io)), but it hasn't been tested and may not be necessary. Instead, you should use imagemagick's binary installer (which includes FFMPEG as an option!?)
 
 [Imagemagick - Windows Binary](https://imagemagick.org/script/download.php#windows)  
-[FFMPEG manual install](https://phoenixnap.com/kb/ffmpeg-windows)  
+
+[FFMPEG install](https://www.reddit.com/r/ffmpeg/comments/12n3hi4/comment/necj1tg/)
+
+```
+- Press WIN+R  
+- Type : Winget install ffmpeg  
+- Wait 10 seconds.
+- Done  
+```  
+
 [youtube-dlp - Windows Binary](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#release-files)
 
 ## Imagemagick
@@ -164,7 +173,7 @@ pass `-i INPUTFILE.xxx`, options, output file:
 It's really as easy as above! You don't even *need* to set an active directory, you can simply type `ffmpeg -i ` then drag + drop original file, drag + drop again, replacing the suffix with a new filetype:
 > ffmpeg -i *input.xxx* *output.yyy*
 
-Get the loooong list of formats + codecs:
+Get the loooong list of formats + [codecs](https://www.ffmpeg.org/general.html#Video-Codecs):
 > ffmpeg -formats  
 > ffmpeg -codecs
 
@@ -252,6 +261,7 @@ Export Motion Vectors only:
 
 ### Additional Links
 - [FFmpeg CLI guide](https://www.ffmpeg.org/ffmpeg.html)
+- [FFmpeg video codecs](https://www.ffmpeg.org/general.html#Video-Codecs)
 - [Rick Companje - FFMpeg Tips](https://companje.nl/ffmpeg)
 - [Complete list of ffmpeg flags / commands](https://gist.github.com/tayvano/6e2d456a9897f55025e25035478a3a50)
 - [Werner Robitza FFmpeg guide](http://slhck.info/ffmpeg-encoding-course/#/20)
@@ -302,6 +312,6 @@ Enjoy more productivity with less interface!
 
 Missing crucial tools or tips? Make an [issue on GitHub](https://github.com/ffd8/cli-for-artists-and-designers/issues).
 
-Updated 2024.04.16  
+Updated 2026.04.21  
 cc [teddavis.org](https://teddavis.org) 2019 –    
 additional contributions: [Ya-No](https://github.com/s4ac), [Hansi3D](https://github.com/kritzikratzi)
